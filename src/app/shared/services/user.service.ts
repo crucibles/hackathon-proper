@@ -144,35 +144,27 @@ export class UserService {
      * @param user user to be registered to the database
      */
     register(
-        schoolId: string,
         firstName: string,
         middleName: string,
         lastName: string,
         birthdate: string,
         email: string,
         password: string,
-        type: string,
         contactNumber: string,
-        securityQuestion: string,
-        securityAnswer: string,
-        userConditions: any
+        monkeyName: string
     ): Observable<User> {
         // The sign up api URL.
         const url = this.signupUrl;
 
         return this.http.post<User>(url, {
-            schoolId,
             firstName,
             middleName,
             lastName,
             birthdate,
             email,
             password,
-            type,
             contactNumber,
-            securityQuestion,
-            securityAnswer,
-            userConditions
+            monkeyName
         }).pipe(
             tap(data => {
                 // Returns data from api.js to sign-up.component.ts.

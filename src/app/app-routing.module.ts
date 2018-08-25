@@ -8,6 +8,7 @@ import {
   Routes
 } from '@angular/router';
 import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up';
 import { HomePageComponent } from './home-page/home-page.component';
 
 
@@ -22,9 +23,14 @@ const routes: Routes = [
     component: LogInComponent
   },
   {
+    path: 'sign-up',
+    component: SignUpComponent
+  },
+  {
     path: 'home-page',
     component: HomePageComponent
   }
+
 ];
 
 @NgModule({

@@ -1,8 +1,7 @@
 // Core imports
 import {
     Component,
-    OnInit,
-    ViewChild
+    OnInit
 } from '@angular/core';
 
 import {
@@ -57,7 +56,6 @@ export class LogInComponent implements OnInit {
             email: [null, Validators.email],
             password: null
         });
-
     }
 
     ngOnInit() {
@@ -93,6 +91,7 @@ export class LogInComponent implements OnInit {
     }
 
     userSignUp() {
+        this.toastr.success("Sign up now!");
         this.router.navigate(['/sign-up']);
     }
 
