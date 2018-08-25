@@ -20,6 +20,9 @@
       "prefix": "app",
       "styles": [
         "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
         "styles.css"
       ],
       "scripts": [],
@@ -56,6 +59,14 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+      "spec": false
+    },
+    "service": {
+      "spec": false
+    },
+    "module": {
+      "spec": false
+    }
   }
 }

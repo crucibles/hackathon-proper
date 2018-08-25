@@ -16,6 +16,9 @@ import { CustomOption } from './toast-option';
 import { UserService } from './shared/services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  CollapseModule
+} from 'ngx-bootstrap/collapse/collapse.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
     ToastModule.forRoot()
