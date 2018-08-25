@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   CollapseModule
-} from 'ngx-bootstrap/collapse/collapse.module';
+} from 'ngx-bootstrap/collapse';
 import { SignUpComponent } from './sign-up';
 
 @NgModule({
