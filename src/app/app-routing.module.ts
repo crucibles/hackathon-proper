@@ -8,6 +8,7 @@ import {
   Routes
 } from '@angular/router';
 import { LogInComponent } from './log-in/log-in.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'log-in',
     component: LogInComponent
+  },
+  {
+    path: 'home-page',
+    component: HomePageComponent
   }
 ];
 
