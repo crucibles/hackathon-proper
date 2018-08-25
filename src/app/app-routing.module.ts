@@ -9,6 +9,7 @@ import {
 } from '@angular/router';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'sign-up',
-    component: SignUpComponent,
+    component: SignUpComponent
+  },
+  {
+    path: 'home-page',
+    component: HomePageComponent
   }
 
 ];

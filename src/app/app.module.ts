@@ -20,12 +20,16 @@ import {
   CollapseModule
 } from 'ngx-bootstrap/collapse';
 import { SignUpComponent } from './sign-up';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomePageComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,
