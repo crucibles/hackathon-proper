@@ -13,6 +13,12 @@ import {
   BrowserAnimationsModule
 } from '@angular/platform-browser/animations';
 import { CustomOption } from './toast-option';
+import { UserService } from './shared/services/user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  CollapseModule
+} from 'ngx-bootstrap/collapse/collapse.module';
 
 @NgModule({
   declarations: [
@@ -23,9 +29,13 @@ import { CustomOption } from './toast-option';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule,
     ToastModule.forRoot()
   ],
   providers: [
+    UserService,
     { provide: ToastOptions, useClass: CustomOption }
   ],
   bootstrap: [AppComponent]
