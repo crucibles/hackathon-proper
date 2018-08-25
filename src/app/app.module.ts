@@ -19,11 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
 import {
   CollapseModule
 } from 'ngx-bootstrap/collapse/collapse.module';
+import { SignUpComponent } from './sign-up';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    LogInComponent,
+    SignUpComponent
   ],
   imports: [
     AppRoutingModule,
