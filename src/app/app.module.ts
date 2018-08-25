@@ -18,12 +18,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   CollapseModule
-} from 'ngx-bootstrap/collapse/collapse.module';
+} from 'ngx-bootstrap/collapse';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    HomePageComponent,
+    LogInComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,
