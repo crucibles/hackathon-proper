@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { BadgeModal } from '../shared/pages/badge-modal/badge-modal';
+import { UserService } from '../shared/services/user.service';
+import { User } from '../shared/models/user';
 
 @Component({
 	selector: 'app-character-page',
@@ -24,8 +26,12 @@ export class CharacterPageComponent implements OnInit {
 		protein: 1.1
 	}
 	private computedNutriValue: any;
+	user: any;
+	charname: any;
 
-	constructor() { }
+	constructor(
+		private userService: UserService
+	) { }
 
 	ngOnInit() {
 		this.initialize();
@@ -33,7 +39,16 @@ export class CharacterPageComponent implements OnInit {
 	}
 
 	initialize(){
-		this.bananaPerc = (this.totalBanana / this.maxbananalvl * 100) + '%';
+		let id: string = this.userService.getCurrentUser().getUserId();
+		this.userService.getUser(id).subscribe(usr => {
+			this.user = new User(usr);
+			console.log(this.user.getTotalBananas());
+			this.totalBanana = this.user.getTotalBananas();
+			this.maxbananalvl = this.user.getLevel() * 5;
+			this.charname = this.user.getMonkeyName();
+			this.charlvl = this.user.getLevel();
+			this.bananaPerc = (this.totalBanana / this.maxbananalvl * 100) + '%';
+		});
 	}
 
 	computeNutriValue() {
@@ -55,7 +70,8 @@ export class CharacterPageComponent implements OnInit {
 			console.log("LVLUP");
 			this.badgeModal.open();
 			this.charlvl++;
-			this.maxbananalvl = this.maxbananalvl * 5;
+			
+			this.maxbananalvl = this.user.getLevel() * 5;
 		}
 		this.bananaPerc = (this.totalBanana / this.maxbananalvl * 100) + '%';
 		this.computeNutriValue();

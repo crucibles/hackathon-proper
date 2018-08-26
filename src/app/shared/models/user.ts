@@ -27,11 +27,14 @@ export class User {
   private user_type: string;
   private user_contact_no: string;
   total_bananas: number;
+  lvl: any;
+  monkeyName: any;
 
   constructor(
     user?: any
   ) {
     if (user) {
+      console.log(user);
       this._id = user._id;
       this.user_fname = user.user_fname ? user.user_fname : "";
       this.user_mname = user.user_mname ? user.user_mname : "";
@@ -42,6 +45,8 @@ export class User {
       this.user_type = user.user_type ? user.user_type : "";
       this.user_contact_no = user.user_contact_no ? user.user_contact_no : "";
       this.total_bananas = user.total_bananas? user.total_bananas: 0;
+      this.lvl = user.lvl? user.lvl: 1;
+      this.monkeyName = user.monkeyName? user.monkeyName: "N/A";
     } else {
       this.user_fname = "";
       this.user_mname = "";
@@ -52,7 +57,17 @@ export class User {
       this.user_type = "";
       this.user_contact_no = "";
       this.total_bananas = 0;
+      this.lvl = 1;
+      this.monkeyName = "N/A";
     }
+  }
+
+  getLevel(){
+    return this.lvl;
+  }
+
+  getMonkeyName(){
+    return this.monkeyName;
   }
 
   setUser(

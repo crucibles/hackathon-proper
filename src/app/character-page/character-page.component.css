@@ -2,8 +2,8 @@
     position: fixed; 
     top: 50%; 
     left: -40%; 
-    width: 5%; 
-    height: 5%;
+    width: 50%; 
+    height: 50%;
   }
   #bg img {
     position: absolute; 
@@ -12,8 +12,8 @@
     right: 0; 
     bottom: 0; 
     margin: auto; 
-    min-width: 10%;
-    min-height: 10%;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   .char-page-content {

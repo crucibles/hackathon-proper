@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <badge-modal #badgeModal></badge-modal>
 
 <div id="bg">
@@ -5,7 +7,7 @@
 </div>
 <div class="char-page-content">
 	<img src="assets/monkey-temp.jpg" class="char-pic" />
-	<div class="char-name">Monkey King</div>
+	<div class="char-name">{{this.charname}}</div>
 	<!-- <div class="container">
 		<img src="assets/daily-icon.png" class="first" tooltip="No. of Eaten Bananas Today" placement="auto" />
 		<div class="second">{{this.dayBanana}}</div>
