@@ -40,10 +40,10 @@ import {
 export class LogInComponent implements OnInit {
     public signupForm: FormGroup;
 
-    private isLoggingIn: boolean = false;
+    isLoggingIn: boolean = false;
     returnUrl: string;
     private loginForm: FormGroup;
-    private warning: boolean;
+    warning: boolean;
 
     constructor(
         formBuilder: FormBuilder,
@@ -74,7 +74,7 @@ export class LogInComponent implements OnInit {
                     if (user) {
                         user = new User(user);
                         this.toastr.success("You are succesfully logged in!", "Welcome " + user.getUserFirstName());
-                        this.router.navigateByUrl(this.returnUrl? this.returnUrl: user.getUserType()+'/general/select-course');
+                        this.router.navigateByUrl(this.returnUrl? this.returnUrl: user.getUserType()+'/home-page');
                     } else {
                         this.warning = true;
                         this.isLoggingIn = false;

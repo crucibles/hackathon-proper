@@ -33,12 +33,8 @@ import { User } from '../models/user';
 export class UserService {
 
     private userUrl = 'api/users';    // URL to: server/routes/api.js for users
-    private userUpdateUrl = 'api/updateUser'; // URL to: server/routes/api.js for updating user details
     private loginUrl = 'api/login';   // URL to: server/routes/api.js for login
     private signupUrl = 'api/signup'; // URL to: server/routes/api.js for sign up
-    private securityQuestionsUrl = 'api/securityQuestions'; // URL to: server/routes/api.js for security questions
-    private userReqPassUrl = 'api/userReqPass'; // URL to: server/routes/api.js for user request password
-    private editStudentProfileUrl = 'api/editStudentProfile'; // URL to: server/routes/api.js for edit student profile
     currentUser: any;
     cookieService: any;
 
@@ -108,20 +104,10 @@ export class UserService {
                 if (data) {
                     this.currentUser = new User(data);
                     localStorage.setItem('currentUser', JSON.stringify(data));
-                    this.cookieService.set('currentUser', this.currentUser.getUserId());
                 }
                 return data;
             }),
             catchError(this.handleError<any>(`logIn user_email=${email}`))
-        );
-    }
-
-    updateUserConditions(user_id: string) {
-        const url = this.userUpdateUrl;
-        return this.http.post(url, { user_id: user_id }).pipe(
-            tap(data => {
-                return data;
-            })
         );
     }
 
@@ -171,39 +157,6 @@ export class UserService {
                 return data;
             }),
             catchError(this.handleError<User>(`signup user_email=${email}`))
-        );
-    }
-
-    /**
-     * Retrieves the security questions in the database.
-     */
-    getSecurityQuestions() {
-        const url = this.securityQuestionsUrl;
-        return this.http.get(url, {}).pipe(
-            tap(data => {
-                return data;
-            })
-        );
-    }
-
-    /**
-     * Retrieves the password of the requesting user from the database.
-     */
-    getUserReqPass(user_email: String) {
-        const url = this.userReqPassUrl;
-        return this.http.post(url, { user_email }).pipe(
-            tap(data => {
-                return data;
-            })
-        );
-    }
-
-    changeProfileData(currentUserId: String, userContactNo: String) {
-        const url = this.userUpdateUrl;
-        return this.http.post(url, {currentUserId, userContactNo}).pipe(
-            tap(data => {
-                return data;
-            })
         );
     }
 
