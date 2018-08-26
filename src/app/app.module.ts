@@ -10,6 +10,10 @@ import {
 } from 'ng2-toastr/ng2-toastr';
 
 import {
+  TooltipModule
+} from 'ngx-bootstrap/tooltip';
+
+import {
   BrowserAnimationsModule
 } from '@angular/platform-browser/animations';
 import { CustomOption } from './toast-option';
@@ -21,10 +25,15 @@ import {
 } from 'ngx-bootstrap/collapse';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CharacterPageComponent } from './character-page/character-page.component';
+import { BadgeModal } from './shared/pages/badge-modal/badge-modal';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BadgeModal,
+    CharacterPageComponent,
     HomePageComponent,
     LogInComponent,
     NavbarComponent
@@ -35,11 +44,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     HttpClientModule,
+    ModalModule.forRoot(),
     ReactiveFormsModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   providers: [
     UserService,
+    BsModalService,
     { provide: ToastOptions, useClass: CustomOption }
   ],
   bootstrap: [AppComponent]

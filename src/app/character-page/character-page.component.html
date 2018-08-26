@@ -1,0 +1,61 @@
+<badge-modal #badgeModal></badge-modal>
+
+<div id="bg">
+	<img src="assets/banana-bg2.jpg">
+</div>
+<div class="char-page-content">
+	<img src="assets/monkey-temp.jpg" class="char-pic" />
+	<div class="char-name">Monkey King</div>
+	<div class="container">
+		<img src="assets/daily-icon.png" class="first" tooltip="No. of Eaten Bananas Today" placement="auto" />
+		<div class="second">{{this.dayBanana}}</div>
+		<div class="clear"></div>
+	</div>
+	<div class="container">
+		<img src="assets/banana-icon.png" class="first2" tooltip="Total No. Eaten Bananas" placement="auto" />
+		<div class="second">{{this.totalBanana}}</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="not-char-content">
+	<div class="container">
+		<button class="btn btn-lg btn-warning btn-circle first" tooltip="Click here if you ate a banana" placement="auto" (click)="eatBanana()"><i class="fa fa-cutlery"
+			 aria-hidden="true"></i></button>
+		<div class="progress second2" style="height:30px">
+			<div class="progress-bar bg-success" style="height:30px" [style.width]="this.bananaPerc"></div>
+			<span>{{this.totalBanana}} / {{this.maxbananalvl}}</span>
+		</div>
+		<div class="third">Level {{this.charlvl}}</div>
+		<div class="clear"></div>
+	</div>
+	<div class="nutri-div">
+		<h6>Total Nutritional Value for Today</h6>
+		<table class="nutri-table" style="width: 100%">
+			<tr>
+				<td>Total Fat</td>
+				<td>{{this.computedNutriValue.totalFat}} g</td>
+			</tr>
+			<tr>
+				<td>Cholesterol</td>
+				<td>{{this.computedNutriValue.cholesterol}} g</td> 
+			</tr>
+			<tr>
+				<td>Sodium</td>
+				<td>{{this.computedNutriValue.sodium}} mg</td> 
+			</tr>
+			<tr>
+				<td>Potassium</td>
+				<td>{{this.computedNutriValue.potassium}} mg</td> 
+			</tr>
+			<tr>
+				<td>Total Carbohydrate</td>
+				<td>{{this.computedNutriValue.totalCarbs}} g</td> 
+			</tr>
+			<tr>
+				<td>Protein</td>
+				<td>{{this.computedNutriValue.protein}} g</td> 
+			</tr>
+		</table>
+	</div>
+
+</div>

@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-md bg-warning navbar-dark fixed-top">
-	<a class="navbar-brand" href="#">Bananoy</a>
+	<a class="navbar-brand" routerLink="/home-page">Bananoy</a>
 	<button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar" [collapse]="isCollapsed">
 		<ul class="nav navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link" (click)="isCollapsed = !isCollapsed">Eat Banana</a>
+				<a class="nav-link" (click)="isCollapsed = !isCollapsed" routerLink="/character-page">Eat Banana</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" (click)="isCollapsed = !isCollapsed">See Monkey</a>
@@ -17,7 +17,7 @@
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" (click)="logOut()" style="float:right">Log Out</a>
+				<a class="nav-link" (click)="logOut()" style="float:right" routerLink="/log-in">Log In</a>
 			</li>
 		</ul>
 	</div>
