@@ -76,7 +76,24 @@ router.post('/login', (req, res) => {
     });
 });
 
-
+router.post('/updateUser', (req,res) => {
+    connection((db) => {
+        const myDB = db.db('up-goe-db');
+        myDB.collection('users')
+            .updateOne(
+                { _id: ObjectID(req.body.currentUserId) },
+                {
+                    $set: {
+                        total_bananas: req.body.total_bananas
+                    }
+                },
+                function (err, res) {
+                    if (err) throw err;
+                    response.data = req.body.currentUserId;
+                }
+            );
+    });
+});
 
 /**
  * @description portal for requests regarding signup. api/signup

@@ -10,6 +10,7 @@ import {
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CharacterPageComponent } from './character-page/character-page.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'home-page',
     component: HomePageComponent
+  },
+  {
+    path: 'character-page',
+    component: CharacterPageComponent
   }
 
 ];
