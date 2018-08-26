@@ -92,6 +92,8 @@ router.post('/signup', (req, res) => {
             user_email: req.body.email,
             user_password: req.body.password,
             user_contact_no: req.body.contactNumber,
+            total_bananas: 0,
+            daily_bananas: []
         };
 
         myDB.collection('users')

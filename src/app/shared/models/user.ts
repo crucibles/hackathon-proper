@@ -26,7 +26,7 @@ export class User {
   private user_password: string;
   private user_type: string;
   private user_contact_no: string;
-  private user_photo: string;
+  total_bananas: number;
 
   constructor(
     user?: any
@@ -41,7 +41,7 @@ export class User {
       this.user_password = user.user_password ? user.user_password : "";
       this.user_type = user.user_type ? user.user_type : "";
       this.user_contact_no = user.user_contact_no ? user.user_contact_no : "";
-      this.user_photo = user.user_photo ? user.user_photo : "";
+      this.total_bananas = user.total_bananas? user.total_bananas: 0;
     } else {
       this.user_fname = "";
       this.user_mname = "";
@@ -51,7 +51,7 @@ export class User {
       this.user_password = "";
       this.user_type = "";
       this.user_contact_no = "";
-      this.user_photo = "";
+      this.total_bananas = 0;
     }
   }
 
@@ -63,12 +63,7 @@ export class User {
     user_email,
     user_password,
     user_type,
-    user_contact_no,
-    user_photo,
-    user_school_id,
-    user_security_question,
-    user_security_answer,
-    user_conditions
+    user_contact_no
   ) {
     this.user_fname = user_fname;
     this.user_mname = user_mname;
@@ -78,11 +73,18 @@ export class User {
     this.user_password = user_password;
     this.user_type = user_type;
     this.user_contact_no = user_contact_no;
-    this.user_photo = user_photo;
   }
 
   getUserId() {
     return this._id;
+  }
+
+  getTotalBananas() {
+    return this.total_bananas;
+  }
+
+  setTotalBananas(tb) {
+    this.total_bananas = tb;
   }
 
   getUserFirstName() {
@@ -174,10 +176,6 @@ export class User {
 
   setUserContactno(user_contact_no) {
     this.user_contact_no = user_contact_no;
-  }
-
-  setUserPhoto(user_photo) {
-    this.user_photo = user_photo;
   }
 
 
