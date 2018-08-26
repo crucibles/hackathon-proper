@@ -1,0 +1,18 @@
+<!-- Modal Template for Modal-->
+<ng-template #badgeModal>
+    <!-- Badge Modal -->
+    <div class="modal-body">
+        <h3>Congratulations!</h3>
+        <img src="/assets/congrats-monkey.jpg" />
+        <div>Eat more bananas, my mate!</div>
+        <div>FUN FACT</div>
+        <div>Banana is the leading fruit-grown crop in the Philippines and the leading export income earner for farmers.</div>
+    </div>
+
+    <!-- Quest Modal Buttons -->
+    <div class="modal-footer">
+        <!-- shows submit & abandon buttons if user is a participant -->
+        <button type="submit" class="btn btn-success" (click)="bsModalRef.hide()">Exit</button>
+    </div>
+</ng-template>
+<!-- quest modal template end -->

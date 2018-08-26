@@ -1,0 +1,143 @@
+#bg {
+    position: fixed; 
+    top: 50%; 
+    left: -40%; 
+    width: 50%; 
+    height: 50%;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .char-page-content {
+    top: 70px;
+    left: 20px;
+    position: absolute;
+  }
+
+  .char-pic {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .char-name {
+    padding: 4px;
+    border-top: 2px dotted darkgrey;
+    border-bottom: 2px dotted darkgrey;
+    background-color:rgba(0, 0, 0, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+  }
+
+
+  .container {
+    margin: 15px 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.first, .first2 {
+  z-index: 3;
+  position: absolute;
+  top: -23px;
+  left: 0;
+  max-width: 60px;
+  margin: 10px 0 10px 0;
+}
+
+.first2{
+  max-width: 50px;
+  top: -15px;
+  left: 10px;
+}
+.second, .second2 {
+  z-index: 1;
+  position: relative;
+  top: 0px;
+  left: 15px;
+    width: 200px;
+    float: left;
+    border-top: 2px dotted darkgrey;
+    border-bottom: 2px dotted darkgrey;
+    background-color:rgba(101, 67, 33, 0.7);
+    text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.second {
+  height: 40px;
+}
+
+.second2 {
+  top: 10px;
+  height: 30px;
+}
+
+.third {
+  position: absolute;
+  top: -15px;
+  left: 55px;
+}
+
+.clear {
+    clear: both;
+}
+
+.not-char-content {
+  position: relative;
+  top: 60px;
+  left: 300px;
+}
+
+.btn-circle, .btn-circle-3d{
+  background-color: #ffd65e; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd65e), to(#febf04));
+  border-radius: 50% !important;
+}
+
+.btn-warning.btn-circle{
+  -webkit-box-shadow: 0px 0px 3px 1px #e38d13;
+  -moz-box-shadow:    0px 0px 3px 1px #e38d13;
+  box-shadow:         0px 0px 3px 1px #e38d13;
+}
+
+.nutri-div {
+  background-color: white;
+  width: 60%;
+  margin: 10px;
+  min-height: 300px;
+  border-top: 2px solid darkgrey;
+  border-bottom: 2px solid darkgrey;
+  border-left: 2px dotted darkgrey;
+  border-right: 2px dotted darkgrey;
+  padding: 10px;
+}
+
+.nutri-title {
+  font-weight: bold;
+}
+
+.progress {
+  position:relative;
+}
+.progress span {
+  position:absolute;
+  left:0;
+  width:100%;
+  top: 15%;
+  text-align:center;
+  z-index:2;
+  color:white;
+  font-size: 1em;
+}
